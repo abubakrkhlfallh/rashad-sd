@@ -379,18 +379,18 @@ function renderLoginPage() {
             showNotification('info', 'جاري إنشاء الحساب...');
             
             // هنا سيتم إضافة كود Supabase للتسجيل
-            // const { data, error } = await supabase.auth.signUp({
-            //     email: formData.email,
-            //     password: formData.password,
-            //     options: {
-            //         data: {
-            //             full_name: formData.fullName,
-            //             role: formData.role,
-            //             phone: formData.phone,
-            //             state: formData.state
-            //         }
-            //     }
-            // });
+             const { data, error } = await supabase.auth.signUp({
+                 email: formData.email,
+                 password: formData.password,
+                 options: {
+                     data: {
+                         full_name: formData.fullName,
+                         role: formData.role,
+                         phone: formData.phone,
+                         state: formData.state
+                     }
+                 }
+             });
             
             // محاكاة التسجيل بنجاح
             setTimeout(() => {
