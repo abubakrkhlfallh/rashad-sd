@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصة الزراعية</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* نظام الألوان */
+        :root {
+            --primary-green: #2E7D32;
+            --light-green: #4CAF50;
+            --yellow: #FFC107;
+            --orange: #FF9800;
+            --brown: #795548;
+            --blue: #2196F3;
+            --light-gray: #F5F5F5;
+            --white: #FFFFFF;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* التصميم المتجاوب */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* للأجهزة المكتبية */
+        @media (min-width: 1024px) {
+            .grid-4 {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        /* للأجهزة اللوحية */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+        }
+
+        /* للهواتف المحمولة */
+        @media (max-width: 767px) {
+            .grid-1 {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .mobile-hidden {
+                display: none !important;
+            }
+            
+            .mobile-menu-btn {
+                display: block !important;
+            }
+        }
+
+        /* تأثيرات التحويل */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .slide-in {
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* حالة التحميل */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+    </style>
+</head>
+<body>
+    <!-- الهيدر -->
+    <header id="main-header">
+        <!-- سيتم إضافته عبر JavaScript -->
+    </header>
+
+    <!-- المحتوى الرئيسي -->
+    <main id="main-content">
+        <!-- سيتم تحميل المحتوى ديناميكيًا -->
+    </main>
+
+    <!-- الفوتر -->
+    <footer id="main-footer">
+        <!-- سيتم إضافته عبر JavaScript -->
+    </footer>
+
+    <!-- المكونات المشتركة -->
+    <div id="modal-container"></div>
+    <div id="notification-container"></div>
+
+    <script>
+        // تهيئة متغيرات عامة
+        const API_CONFIG = {
+            supabaseUrl: 'https://yqtaszzlibfocaonrygf.supabase.co',
+            supabaseKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlxdGFzenpsaWJmb2Nhb25yeWdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjY0NjkzNTAsImV4cCI6MjA4MjA0NTM1MH0.mRu7m-xeW162j13seV1v7J_mdKWpKLEMsfkjffrAhnw'
+        };
+
+        // حالات التطبيق
+        let currentUser = null;
+        let currentPage = 'home';
+    </script>
+    
+    <script src="components.js"></script>
+    <script src="auth.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
